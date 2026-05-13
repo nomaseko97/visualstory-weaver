@@ -48,21 +48,32 @@ const FORMATS = [
   { icon: BarChart3, title: "Infographics", desc: "Clean visual breakdowns of dense ideas." },
 ];
 
+function Aurora() {
+  return (
+    <div className="aurora-bg" aria-hidden>
+      <div className="aurora-blob b1" />
+      <div className="aurora-blob b2" />
+      <div className="aurora-blob b3" />
+    </div>
+  );
+}
+
 function Index() {
   return (
-    <main className="min-h-screen">
+    <main className="relative min-h-screen">
+      <Aurora />
       <Toaster richColors position="top-center" />
 
       {/* Nav */}
       <header className="container mx-auto flex items-center justify-between px-4 py-6">
         <div className="flex items-center gap-2">
-          <div className="grid h-9 w-9 place-items-center rounded-lg bg-primary panel-border">
+          <div className="grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-primary to-secondary panel-border">
             <BookOpenText className="h-5 w-5 text-primary-foreground" />
           </div>
           <span className="font-display text-2xl tracking-wide">VisualReads</span>
         </div>
         <a href="#demo">
-          <Button variant="outline" className="border-2 border-ink bg-card font-bold">
+          <Button variant="outline" className="glass font-bold">
             Try the demo
           </Button>
         </a>
@@ -70,8 +81,8 @@ function Index() {
 
       {/* Hero */}
       <section className="container mx-auto grid items-center gap-10 px-4 pb-16 pt-10 md:grid-cols-2 md:pt-20">
-        <div className="bg-glow">
-          <span className="inline-flex items-center gap-2 rounded-full border-2 border-ink bg-secondary px-4 py-1 text-sm font-bold text-secondary-foreground">
+        <div>
+          <span className="inline-flex items-center gap-2 rounded-full glass px-4 py-1 text-sm font-semibold">
             <Sparkle /> The future of reading
           </span>
           <h1 className="mt-5 text-6xl leading-[0.95] text-foreground text-stroke md:text-7xl">
@@ -86,17 +97,13 @@ function Index() {
             <a href="#demo">
               <Button
                 size="lg"
-                className="border-2 border-ink bg-primary font-display text-lg text-primary-foreground hover:bg-primary/90"
+                className="bg-gradient-to-r from-primary to-secondary font-display text-lg text-primary-foreground shadow-[0_0_30px_oklch(0.55_0.25_295/0.6)] hover:opacity-95"
               >
                 Visualize a story
               </Button>
             </a>
             <a href="#formats">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-ink bg-card font-display text-lg"
-              >
+              <Button size="lg" variant="outline" className="glass font-display text-lg">
                 See formats
               </Button>
             </a>
@@ -132,13 +139,12 @@ function Index() {
           </p>
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {FORMATS.map((f, i) => (
+          {FORMATS.map((f) => (
             <div
               key={f.title}
-              className="group rounded-xl bg-gradient-panel p-6 panel-border transition hover:-translate-y-1"
-              style={{ transform: `rotate(${(i % 2 ? 1 : -1) * 0.5}deg)` }}
+              className="group rounded-xl glass p-6 transition hover:-translate-y-1"
             >
-              <div className="grid h-12 w-12 place-items-center rounded-lg bg-primary panel-border">
+              <div className="grid h-12 w-12 place-items-center rounded-lg bg-gradient-to-br from-primary to-secondary">
                 <f.icon className="h-6 w-6 text-primary-foreground" />
               </div>
               <h3 className="mt-4 font-display text-2xl">{f.title}</h3>
@@ -165,7 +171,7 @@ function Index() {
             <a href="#demo" className="mt-8 inline-block">
               <Button
                 size="lg"
-                className="border-2 border-ink bg-accent font-display text-lg text-accent-foreground hover:bg-accent/90"
+                className="bg-accent font-display text-lg text-accent-foreground shadow-[0_0_30px_oklch(0.85_0.18_95/0.5)] hover:bg-accent/90"
               >
                 Try VisualReads free
               </Button>
