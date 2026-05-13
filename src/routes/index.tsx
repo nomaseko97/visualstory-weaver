@@ -121,14 +121,14 @@ function Index() {
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-foreground/85">Stop scrolling walls of text. Start seeing them.</p>
             <Link to="/create" className="neon-cta mt-8 inline-flex font-display text-base tracking-[0.18em]">
-              TRY VISUALREADS FREE
+              TRY VISUALREAD FREE
             </Link>
           </div>
         </div>
       </section>
 
       <footer className="container mx-auto px-4 pb-10 text-center text-sm text-muted-foreground">
-        © {new Date().getFullYear()} VisualReads — Read in pictures.
+        © {new Date().getFullYear()} VisualRead — Read in pictures.
       </footer>
     </main>
   );
