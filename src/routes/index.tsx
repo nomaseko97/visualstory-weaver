@@ -67,13 +67,13 @@ function Index() {
       {/* Nav */}
       <header className="container mx-auto flex items-center justify-between px-4 py-6">
         <div className="flex items-center gap-2">
-          <div className="grid h-9 w-9 place-items-center rounded-lg bg-primary panel-border">
+          <div className="grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-primary to-secondary panel-border">
             <BookOpenText className="h-5 w-5 text-primary-foreground" />
           </div>
           <span className="font-display text-2xl tracking-wide">VisualReads</span>
         </div>
         <a href="#demo">
-          <Button variant="outline" className="border-2 border-ink bg-card font-bold">
+          <Button variant="outline" className="glass font-bold">
             Try the demo
           </Button>
         </a>
@@ -81,8 +81,8 @@ function Index() {
 
       {/* Hero */}
       <section className="container mx-auto grid items-center gap-10 px-4 pb-16 pt-10 md:grid-cols-2 md:pt-20">
-        <div className="bg-glow">
-          <span className="inline-flex items-center gap-2 rounded-full border-2 border-ink bg-secondary px-4 py-1 text-sm font-bold text-secondary-foreground">
+        <div>
+          <span className="inline-flex items-center gap-2 rounded-full glass px-4 py-1 text-sm font-semibold">
             <Sparkle /> The future of reading
           </span>
           <h1 className="mt-5 text-6xl leading-[0.95] text-foreground text-stroke md:text-7xl">
