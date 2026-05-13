@@ -9,22 +9,10 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ReaderRouteImport } from './routes/reader'
-import { Route as FeaturesRouteImport } from './routes/features'
 import { Route as ExploreRouteImport } from './routes/explore'
 import { Route as CreateRouteImport } from './routes/create'
 import { Route as IndexRouteImport } from './routes/index'
 
-const ReaderRoute = ReaderRouteImport.update({
-  id: '/reader',
-  path: '/reader',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FeaturesRoute = FeaturesRouteImport.update({
-  id: '/features',
-  path: '/features',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ExploreRoute = ExploreRouteImport.update({
   id: '/explore',
   path: '/explore',
@@ -45,56 +33,34 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/create': typeof CreateRoute
   '/explore': typeof ExploreRoute
-  '/features': typeof FeaturesRoute
-  '/reader': typeof ReaderRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/create': typeof CreateRoute
   '/explore': typeof ExploreRoute
-  '/features': typeof FeaturesRoute
-  '/reader': typeof ReaderRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/create': typeof CreateRoute
   '/explore': typeof ExploreRoute
-  '/features': typeof FeaturesRoute
-  '/reader': typeof ReaderRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/create' | '/explore' | '/features' | '/reader'
+  fullPaths: '/' | '/create' | '/explore'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/create' | '/explore' | '/features' | '/reader'
-  id: '__root__' | '/' | '/create' | '/explore' | '/features' | '/reader'
+  to: '/' | '/create' | '/explore'
+  id: '__root__' | '/' | '/create' | '/explore'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CreateRoute: typeof CreateRoute
   ExploreRoute: typeof ExploreRoute
-  FeaturesRoute: typeof FeaturesRoute
-  ReaderRoute: typeof ReaderRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/reader': {
-      id: '/reader'
-      path: '/reader'
-      fullPath: '/reader'
-      preLoaderRoute: typeof ReaderRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/features': {
-      id: '/features'
-      path: '/features'
-      fullPath: '/features'
-      preLoaderRoute: typeof FeaturesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/explore': {
       id: '/explore'
       path: '/explore'
@@ -123,9 +89,17 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CreateRoute: CreateRoute,
   ExploreRoute: ExploreRoute,
-  FeaturesRoute: FeaturesRoute,
-  ReaderRoute: ReaderRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

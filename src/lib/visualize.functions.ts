@@ -2,7 +2,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
 const InputSchema = z.object({
-  text: z.string().min(20).max(4000),
+  text: z.string().min(3).max(4000),
   style: z.enum(["comic", "manga", "cinematic", "infographic"]).default("comic"),
 });
 
