@@ -139,13 +139,12 @@ function Index() {
           </p>
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {FORMATS.map((f, i) => (
+          {FORMATS.map((f) => (
             <div
               key={f.title}
-              className="group rounded-xl bg-gradient-panel p-6 panel-border transition hover:-translate-y-1"
-              style={{ transform: `rotate(${(i % 2 ? 1 : -1) * 0.5}deg)` }}
+              className="group rounded-xl glass p-6 transition hover:-translate-y-1"
             >
-              <div className="grid h-12 w-12 place-items-center rounded-lg bg-primary panel-border">
+              <div className="grid h-12 w-12 place-items-center rounded-lg bg-gradient-to-br from-primary to-secondary">
                 <f.icon className="h-6 w-6 text-primary-foreground" />
               </div>
               <h3 className="mt-4 font-display text-2xl">{f.title}</h3>
