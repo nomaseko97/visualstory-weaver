@@ -53,8 +53,8 @@ function Index() {
             <br /> not paragraphs.
           </h1>
           <p className="mt-6 max-w-lg text-lg text-muted-foreground">
-            VisualReads turns articles, novels, lessons, and research into
-            comics, storyboards, manga, and cinematic scenes — instantly.
+            VisualRead turns articles, novels, lessons, and research — or your own
+            short ideas — into comics, storyboards, manga, and cinematic scenes.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link to="/create" className="neon-cta font-display text-base tracking-[0.18em]">
