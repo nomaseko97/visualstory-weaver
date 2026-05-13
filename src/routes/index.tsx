@@ -1,33 +1,22 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Button } from "@/components/ui/button";
-import { VisualizerDemo } from "@/components/VisualizerDemo";
-import heroImage from "@/assets/hero-comic.jpg";
-import { Toaster } from "@/components/ui/sonner";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { motion } from "framer-motion";
 import {
-  BookOpenText,
-  Newspaper,
-  GraduationCap,
-  Microscope,
-  Wand2,
-  Film,
-  PenTool,
-  BarChart3,
+  BookOpenText, Newspaper, GraduationCap, Microscope,
+  Wand2, Film, PenTool, BarChart3, ArrowRight,
 } from "lucide-react";
+
+import heroImage from "@/assets/hero-comic.jpg";
+import { Aurora } from "@/components/Aurora";
+import { SiteHeader } from "@/components/SiteHeader";
+import { Toaster } from "@/components/ui/sonner";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "VisualReads — Read in Pictures, Not Paragraphs" },
-      {
-        name: "description",
-        content:
-          "VisualReads turns articles, novels, and educational content into comics, storyboards, and cinematic scenes. The future of reading is visual.",
-      },
+      { name: "description", content: "Turn articles, novels, lessons and research into comics, storyboards and cinematic scenes." },
       { property: "og:title", content: "VisualReads — Read in Pictures" },
-      {
-        property: "og:description",
-        content: "Transform any text into a visual story with AI.",
-      },
+      { property: "og:description", content: "Transform any text into a visual story with AI." },
       { property: "og:image", content: heroImage },
     ],
   }),
@@ -48,45 +37,19 @@ const FORMATS = [
   { icon: BarChart3, title: "Infographics", desc: "Clean visual breakdowns of dense ideas." },
 ];
 
-function Aurora() {
-  return (
-    <div className="aurora-bg" aria-hidden>
-      <div className="aurora-blob b1" />
-      <div className="aurora-blob b2" />
-      <div className="aurora-blob b3" />
-    </div>
-  );
-}
-
 function Index() {
   return (
     <main className="relative min-h-screen">
       <Aurora />
       <Toaster richColors position="top-center" />
-
-      {/* Nav */}
-      <header className="container mx-auto flex items-center justify-between px-4 py-6">
-        <div className="flex items-center gap-2">
-          <div className="grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-primary to-secondary panel-border">
-            <BookOpenText className="h-5 w-5 text-primary-foreground" />
-          </div>
-          <span className="font-display text-2xl tracking-wide">VisualReads</span>
-        </div>
-        <a href="#demo">
-          <Button variant="outline" className="glass font-bold">
-            Try the demo
-          </Button>
-        </a>
-      </header>
+      <SiteHeader />
 
       {/* Hero */}
-      <section className="container mx-auto grid items-center gap-10 px-4 pb-16 pt-10 md:grid-cols-2 md:pt-20">
-        <div>
-          <span className="inline-flex items-center gap-2 rounded-full glass px-4 py-1 text-sm font-semibold">
-            <Sparkle /> The future of reading
-          </span>
-          <h1 className="mt-5 text-6xl leading-[0.95] text-foreground text-stroke md:text-7xl">
-            Read in <span className="text-primary">pictures</span>,
+      <section className="container mx-auto grid items-center gap-10 px-4 pb-16 pt-6 md:grid-cols-2 md:pt-12">
+        <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+          <span className="label-eyebrow">The future of reading</span>
+          <h1 className="mt-4 font-display text-6xl leading-[0.95] text-foreground md:text-7xl">
+            Read in <span className="gradient-text">pictures</span>,
             <br /> not paragraphs.
           </h1>
           <p className="mt-6 max-w-lg text-lg text-muted-foreground">
@@ -94,19 +57,10 @@ function Index() {
             comics, storyboards, manga, and cinematic scenes — instantly.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#demo">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-primary to-secondary font-display text-lg text-primary-foreground shadow-[0_0_30px_oklch(0.55_0.25_295/0.6)] hover:opacity-95"
-              >
-                Visualize a story
-              </Button>
-            </a>
-            <a href="#formats">
-              <Button size="lg" variant="outline" className="glass font-display text-lg">
-                See formats
-              </Button>
-            </a>
+            <Link to="/create" className="neon-cta font-display text-base tracking-[0.18em]">
+              START CREATING <ArrowRight className="ml-1 h-4 w-4" />
+            </Link>
+            <Link to="/explore" className="chip px-5 py-2.5 text-sm">Explore stories</Link>
           </div>
           <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3">
             {CONTENT_TYPES.map((c) => (
@@ -116,9 +70,9 @@ function Index() {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
-        <div className="relative">
+        <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.1 }} className="relative">
           <div className="absolute -inset-6 rounded-3xl bg-gradient-hero opacity-30 blur-3xl" />
           <img
             src={heroImage}
@@ -127,55 +81,48 @@ function Index() {
             height={1024}
             className="relative rounded-2xl panel-border"
           />
-        </div>
+        </motion.div>
       </section>
 
       {/* Formats */}
-      <section id="formats" className="container mx-auto px-4 py-20">
+      <section className="container mx-auto px-4 py-20">
         <div className="text-center">
-          <h2 className="text-5xl text-stroke">One text. Four ways to see it.</h2>
-          <p className="mt-3 text-muted-foreground">
-            Choose how you want your story rendered.
-          </p>
+          <span className="label-eyebrow">Formats</span>
+          <h2 className="mt-3 font-display text-5xl"><span className="gradient-text">One text. Many ways to see it.</span></h2>
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {FORMATS.map((f) => (
-            <div
+          {FORMATS.map((f, i) => (
+            <motion.div
               key={f.title}
-              className="group rounded-xl glass p-6 transition hover:-translate-y-1"
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, delay: i * 0.08 }}
+              className="glass-card p-6"
             >
               <div className="grid h-12 w-12 place-items-center rounded-lg bg-gradient-to-br from-primary to-secondary">
                 <f.icon className="h-6 w-6 text-primary-foreground" />
               </div>
               <h3 className="mt-4 font-display text-2xl">{f.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{f.desc}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
 
-      {/* Demo */}
-      <VisualizerDemo />
-
       {/* CTA */}
       <section className="container mx-auto px-4 pb-24">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-hero p-12 text-center panel-border">
-          <div className="absolute inset-0 halftone opacity-30" />
+        <div className="glass-card relative overflow-hidden p-12 text-center">
+          <div className="absolute inset-0 bg-gradient-hero opacity-25" />
+          <div className="absolute inset-0 halftone opacity-20" />
           <div className="relative">
-            <h2 className="text-5xl text-white text-stroke md:text-6xl">
-              Reading, reinvented.
+            <h2 className="font-display text-5xl text-foreground md:text-6xl">
+              <span className="gradient-text">Reading, reinvented.</span>
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-white/90">
-              Stop scrolling walls of text. Start seeing them.
-            </p>
-            <a href="#demo" className="mt-8 inline-block">
-              <Button
-                size="lg"
-                className="bg-accent font-display text-lg text-accent-foreground shadow-[0_0_30px_oklch(0.85_0.18_95/0.5)] hover:bg-accent/90"
-              >
-                Try VisualReads free
-              </Button>
-            </a>
+            <p className="mx-auto mt-4 max-w-xl text-foreground/85">Stop scrolling walls of text. Start seeing them.</p>
+            <Link to="/create" className="neon-cta mt-8 inline-flex font-display text-base tracking-[0.18em]">
+              TRY VISUALREADS FREE
+            </Link>
           </div>
         </div>
       </section>
@@ -184,13 +131,5 @@ function Index() {
         © {new Date().getFullYear()} VisualReads — Read in pictures.
       </footer>
     </main>
-  );
-}
-
-function Sparkle() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z" />
-    </svg>
   );
 }
