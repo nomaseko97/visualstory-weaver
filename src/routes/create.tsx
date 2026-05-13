@@ -167,13 +167,13 @@ function CreatePage() {
           </div>
 
           <div className="mt-8">
-            <label htmlFor="topic" className="label-eyebrow">Topic or paste text</label>
+            <label htmlFor="topic" className="label-eyebrow">Topic, idea, or your own story</label>
             <Textarea
               id="topic"
               value={topic}
               onChange={(e) => setTopic(e.target.value)}
               rows={6}
-              placeholder="e.g. Turn this article into an 8-panel manga about a samurai detective in neon Tokyo..."
+              placeholder='e.g. "winter in SA", or paste an article, or write your own short story...'
               className="mt-3 resize-none border-white/10 bg-white/[0.03] text-base"
             />
           </div>
