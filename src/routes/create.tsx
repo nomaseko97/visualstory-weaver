@@ -89,7 +89,7 @@ function CreatePage() {
     );
   }, [query]);
 
-  const canGenerate = topic.trim().length >= 20 && !mutation.isPending;
+  const canGenerate = topic.trim().length >= 3 && !mutation.isPending;
 
   const copy = async (i: number, text: string) => {
     try {
