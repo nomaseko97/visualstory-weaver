@@ -97,17 +97,13 @@ function Index() {
             <a href="#demo">
               <Button
                 size="lg"
-                className="border-2 border-ink bg-primary font-display text-lg text-primary-foreground hover:bg-primary/90"
+                className="bg-gradient-to-r from-primary to-secondary font-display text-lg text-primary-foreground shadow-[0_0_30px_oklch(0.55_0.25_295/0.6)] hover:opacity-95"
               >
                 Visualize a story
               </Button>
             </a>
             <a href="#formats">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-ink bg-card font-display text-lg"
-              >
+              <Button size="lg" variant="outline" className="glass font-display text-lg">
                 See formats
               </Button>
             </a>
