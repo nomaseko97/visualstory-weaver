@@ -171,7 +171,7 @@ function Index() {
             <a href="#demo" className="mt-8 inline-block">
               <Button
                 size="lg"
-                className="border-2 border-ink bg-accent font-display text-lg text-accent-foreground hover:bg-accent/90"
+                className="bg-accent font-display text-lg text-accent-foreground shadow-[0_0_30px_oklch(0.85_0.18_95/0.5)] hover:bg-accent/90"
               >
                 Try VisualReads free
               </Button>
