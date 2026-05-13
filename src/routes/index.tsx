@@ -13,10 +13,10 @@ import { Toaster } from "@/components/ui/sonner";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "VisualReads — Read in Pictures, Not Paragraphs" },
-      { name: "description", content: "Turn articles, novels, lessons and research into comics, storyboards and cinematic scenes." },
-      { property: "og:title", content: "VisualReads — Read in Pictures" },
-      { property: "og:description", content: "Transform any text into a visual story with AI." },
+      { title: "VisualRead — Read in Pictures, Not Paragraphs" },
+      { name: "description", content: "Turn articles, novels, lessons, research — or your own ideas — into comics, storyboards and cinematic scenes." },
+      { property: "og:title", content: "VisualRead — Read in Pictures" },
+      { property: "og:description", content: "Transform any text or idea into a visual story." },
       { property: "og:image", content: heroImage },
     ],
   }),
