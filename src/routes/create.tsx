@@ -282,9 +282,9 @@ function CreatePage() {
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <h2 className="font-display text-4xl tracking-wide md:text-5xl">
-              Steal a <span className="gradient-text italic">starter prompt.</span>
+              <span className="gradient-text italic">Prompt library.</span>
             </h2>
-            <p className="mt-2 text-muted-foreground">Searchable, copy-to-clipboard. Click "Use" to load it into the generator.</p>
+            <p className="mt-2 text-muted-foreground">Searchable, copy-to-clipboard. Click "Use" to load it into the editor.</p>
           </div>
           <div className="relative w-full md:w-96">
             <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
