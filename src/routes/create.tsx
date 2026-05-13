@@ -123,12 +123,12 @@ function CreatePage() {
           transition={{ duration: 0.5 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <span className="label-eyebrow">AI Content Generator</span>
+          <span className="label-eyebrow">Create</span>
           <h1 className="mt-3 font-display text-5xl tracking-wide md:text-6xl">
-            <span className="gradient-text">Bring any text to life.</span>
+            <span className="gradient-text">Bring any idea to life.</span>
           </h1>
           <p className="mt-3 text-muted-foreground">
-            Pick a content type, paste your topic, choose a vibe — we'll render it.
+            Type a few words like "winter in SA", paste a full article, or write your own story — we'll render it.
           </p>
         </motion.div>
 
