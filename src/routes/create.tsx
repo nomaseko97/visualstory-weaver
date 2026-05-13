@@ -20,8 +20,8 @@ import { visualizeText } from "@/lib/visualize.functions";
 export const Route = createFileRoute("/create")({
   head: () => ({
     meta: [
-      { title: "AI Content Generator — VisualReads" },
-      { name: "description", content: "Generate comics, infographics, cinematic scenes and more from any text." },
+      { title: "Create — VisualRead" },
+      { name: "description", content: "Generate comics, infographics, cinematic scenes and more from a topic or text." },
     ],
   }),
   component: CreatePage,
