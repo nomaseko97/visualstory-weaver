@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ReaderRouteImport } from './routes/reader'
+import { Route as FeaturesRouteImport } from './routes/features'
 import { Route as ExploreRouteImport } from './routes/explore'
 import { Route as CreateRouteImport } from './routes/create'
 import { Route as IndexRouteImport } from './routes/index'
@@ -17,6 +18,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const ReaderRoute = ReaderRouteImport.update({
   id: '/reader',
   path: '/reader',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeaturesRoute = FeaturesRouteImport.update({
+  id: '/features',
+  path: '/features',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExploreRoute = ExploreRouteImport.update({
@@ -39,12 +45,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/create': typeof CreateRoute
   '/explore': typeof ExploreRoute
+  '/features': typeof FeaturesRoute
   '/reader': typeof ReaderRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/create': typeof CreateRoute
   '/explore': typeof ExploreRoute
+  '/features': typeof FeaturesRoute
   '/reader': typeof ReaderRoute
 }
 export interface FileRoutesById {
@@ -52,20 +60,22 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/create': typeof CreateRoute
   '/explore': typeof ExploreRoute
+  '/features': typeof FeaturesRoute
   '/reader': typeof ReaderRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/create' | '/explore' | '/reader'
+  fullPaths: '/' | '/create' | '/explore' | '/features' | '/reader'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/create' | '/explore' | '/reader'
-  id: '__root__' | '/' | '/create' | '/explore' | '/reader'
+  to: '/' | '/create' | '/explore' | '/features' | '/reader'
+  id: '__root__' | '/' | '/create' | '/explore' | '/features' | '/reader'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CreateRoute: typeof CreateRoute
   ExploreRoute: typeof ExploreRoute
+  FeaturesRoute: typeof FeaturesRoute
   ReaderRoute: typeof ReaderRoute
 }
 
@@ -76,6 +86,13 @@ declare module '@tanstack/react-router' {
       path: '/reader'
       fullPath: '/reader'
       preLoaderRoute: typeof ReaderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/features': {
+      id: '/features'
+      path: '/features'
+      fullPath: '/features'
+      preLoaderRoute: typeof FeaturesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/explore': {
@@ -106,6 +123,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CreateRoute: CreateRoute,
   ExploreRoute: ExploreRoute,
+  FeaturesRoute: FeaturesRoute,
   ReaderRoute: ReaderRoute,
 }
 export const routeTree = rootRouteImport
