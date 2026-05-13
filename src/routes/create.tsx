@@ -238,7 +238,7 @@ function CreatePage() {
             </motion.button>
             <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
               <Sparkles className="h-4 w-4 text-accent" />
-              Powered by Lovable AI — real-time generation enabled.
+              Real-time generation enabled.
             </div>
           </div>
         </motion.div>
