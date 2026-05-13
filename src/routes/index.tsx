@@ -48,9 +48,20 @@ const FORMATS = [
   { icon: BarChart3, title: "Infographics", desc: "Clean visual breakdowns of dense ideas." },
 ];
 
+function Aurora() {
+  return (
+    <div className="aurora-bg" aria-hidden>
+      <div className="aurora-blob b1" />
+      <div className="aurora-blob b2" />
+      <div className="aurora-blob b3" />
+    </div>
+  );
+}
+
 function Index() {
   return (
-    <main className="min-h-screen">
+    <main className="relative min-h-screen">
+      <Aurora />
       <Toaster richColors position="top-center" />
 
       {/* Nav */}
