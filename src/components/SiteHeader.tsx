@@ -4,8 +4,6 @@ import { BookOpenText } from "lucide-react";
 const NAV = [
   { to: "/explore", label: "Explore" },
   { to: "/create", label: "Create" },
-  { to: "/reader", label: "Reader" },
-  { to: "/features", label: "Features" },
 ] as const;
 
 export function SiteHeader() {
@@ -16,9 +14,8 @@ export function SiteHeader() {
           <div className="grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-primary to-secondary shadow-[0_0_18px_oklch(0.55_0.25_295/0.55)]">
             <BookOpenText className="h-5 w-5 text-primary-foreground" />
           </div>
-          <span className="font-display text-2xl tracking-wider">
-            <span className="text-foreground">VISUALREADS</span>
-            <span className="text-primary">.AI</span>
+          <span className="font-display text-2xl tracking-wider text-foreground">
+            VISUALREAD
           </span>
         </Link>
 

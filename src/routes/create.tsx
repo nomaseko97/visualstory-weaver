@@ -20,8 +20,8 @@ import { visualizeText } from "@/lib/visualize.functions";
 export const Route = createFileRoute("/create")({
   head: () => ({
     meta: [
-      { title: "AI Content Generator — VisualReads" },
-      { name: "description", content: "Generate comics, infographics, cinematic scenes and more from any text." },
+      { title: "Create — VisualRead" },
+      { name: "description", content: "Generate comics, infographics, cinematic scenes and more from a topic or text." },
     ],
   }),
   component: CreatePage,
@@ -89,7 +89,7 @@ function CreatePage() {
     );
   }, [query]);
 
-  const canGenerate = topic.trim().length >= 20 && !mutation.isPending;
+  const canGenerate = topic.trim().length >= 3 && !mutation.isPending;
 
   const copy = async (i: number, text: string) => {
     try {
@@ -123,12 +123,12 @@ function CreatePage() {
           transition={{ duration: 0.5 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <span className="label-eyebrow">AI Content Generator</span>
+          <span className="label-eyebrow">Create</span>
           <h1 className="mt-3 font-display text-5xl tracking-wide md:text-6xl">
-            <span className="gradient-text">Bring any text to life.</span>
+            <span className="gradient-text">Bring any idea to life.</span>
           </h1>
           <p className="mt-3 text-muted-foreground">
-            Pick a content type, paste your topic, choose a vibe — we'll render it.
+            Type a few words like "winter in SA", paste a full article, or write your own story — we'll render it.
           </p>
         </motion.div>
 
@@ -167,13 +167,13 @@ function CreatePage() {
           </div>
 
           <div className="mt-8">
-            <label htmlFor="topic" className="label-eyebrow">Topic or paste text</label>
+            <label htmlFor="topic" className="label-eyebrow">Topic, idea, or your own story</label>
             <Textarea
               id="topic"
               value={topic}
               onChange={(e) => setTopic(e.target.value)}
               rows={6}
-              placeholder="e.g. Turn this article into an 8-panel manga about a samurai detective in neon Tokyo..."
+              placeholder='e.g. "winter in SA", or paste an article, or write your own short story...'
               className="mt-3 resize-none border-white/10 bg-white/[0.03] text-base"
             />
           </div>
@@ -238,7 +238,7 @@ function CreatePage() {
             </motion.button>
             <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
               <Sparkles className="h-4 w-4 text-accent" />
-              Powered by Lovable AI — real-time generation enabled.
+              Real-time generation enabled.
             </div>
           </div>
         </motion.div>
@@ -282,9 +282,9 @@ function CreatePage() {
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <h2 className="font-display text-4xl tracking-wide md:text-5xl">
-              Steal a <span className="gradient-text italic">starter prompt.</span>
+              <span className="gradient-text italic">Prompt library.</span>
             </h2>
-            <p className="mt-2 text-muted-foreground">Searchable, copy-to-clipboard. Click "Use" to load it into the generator.</p>
+            <p className="mt-2 text-muted-foreground">Searchable, copy-to-clipboard. Click "Use" to load it into the editor.</p>
           </div>
           <div className="relative w-full md:w-96">
             <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />

@@ -13,10 +13,10 @@ import { Toaster } from "@/components/ui/sonner";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "VisualReads — Read in Pictures, Not Paragraphs" },
-      { name: "description", content: "Turn articles, novels, lessons and research into comics, storyboards and cinematic scenes." },
-      { property: "og:title", content: "VisualReads — Read in Pictures" },
-      { property: "og:description", content: "Transform any text into a visual story with AI." },
+      { title: "VisualRead — Read in Pictures, Not Paragraphs" },
+      { name: "description", content: "Turn articles, novels, lessons, research — or your own ideas — into comics, storyboards and cinematic scenes." },
+      { property: "og:title", content: "VisualRead — Read in Pictures" },
+      { property: "og:description", content: "Transform any text or idea into a visual story." },
       { property: "og:image", content: heroImage },
     ],
   }),
@@ -53,8 +53,8 @@ function Index() {
             <br /> not paragraphs.
           </h1>
           <p className="mt-6 max-w-lg text-lg text-muted-foreground">
-            VisualReads turns articles, novels, lessons, and research into
-            comics, storyboards, manga, and cinematic scenes — instantly.
+            VisualRead turns articles, novels, lessons, and research — or your own
+            short ideas — into comics, storyboards, manga, and cinematic scenes.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link to="/create" className="neon-cta font-display text-base tracking-[0.18em]">
@@ -121,14 +121,14 @@ function Index() {
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-foreground/85">Stop scrolling walls of text. Start seeing them.</p>
             <Link to="/create" className="neon-cta mt-8 inline-flex font-display text-base tracking-[0.18em]">
-              TRY VISUALREADS FREE
+              TRY VISUALREAD FREE
             </Link>
           </div>
         </div>
       </section>
 
       <footer className="container mx-auto px-4 pb-10 text-center text-sm text-muted-foreground">
-        © {new Date().getFullYear()} VisualReads — Read in pictures.
+        © {new Date().getFullYear()} VisualRead — Read in pictures.
       </footer>
     </main>
   );
