@@ -282,7 +282,7 @@ function CreatePage() {
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <h2 className="font-display text-4xl tracking-wide md:text-5xl">
-              <span className="gradient-text italic">Prompt library.</span>
+              <span className="gradient-text italic">VisualReads Prompt Hub.</span>
             </h2>
             <p className="mt-2 text-muted-foreground">Searchable, copy-to-clipboard. Click "Use" to load it into the editor.</p>
           </div>
