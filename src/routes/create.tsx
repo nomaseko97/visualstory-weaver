@@ -20,7 +20,7 @@ import { visualizeText } from "@/lib/visualize.functions";
 export const Route = createFileRoute("/create")({
   head: () => ({
     meta: [
-      { title: "Create — VisualRead" },
+      { title: "Create — VisualReads" },
       { name: "description", content: "Generate comics, infographics, cinematic scenes and more from a topic or text." },
     ],
   }),

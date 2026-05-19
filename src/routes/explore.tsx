@@ -11,8 +11,8 @@ import {
 export const Route = createFileRoute("/explore")({
   head: () => ({
     meta: [
-      { title: "How it works — VisualRead" },
-      { name: "description", content: "See how VisualRead turns a few words, an article, or your own story into visual scenes." },
+      { title: "How it works — VisualReads" },
+      { name: "description", content: "See how VisualReads turns a few words, an article, or your own story into visual scenes." },
     ],
   }),
   component: Explore,
@@ -72,7 +72,7 @@ function Explore() {
             <span className="gradient-text">From a thought to a story — in seconds.</span>
           </h1>
           <p className="mt-3 text-muted-foreground">
-            VisualRead takes whatever you bring — a few words, a long article, or a story you wrote yourself — and turns it into a sequence of visual scenes you can read like a comic.
+            VisualReads takes whatever you bring — a few words, a long article, or a story you wrote yourself — and turns it into a sequence of visual scenes you can read like a comic.
           </p>
         </motion.div>
 
