@@ -20,7 +20,7 @@ import { visualizeText } from "@/lib/visualize.functions";
 export const Route = createFileRoute("/create")({
   head: () => ({
     meta: [
-      { title: "Create — VisualRead" },
+      { title: "Create — VisualReads" },
       { name: "description", content: "Generate comics, infographics, cinematic scenes and more from a topic or text." },
     ],
   }),
@@ -89,7 +89,7 @@ function CreatePage() {
     );
   }, [query]);
 
-  const canGenerate = topic.trim().length >= 3 && !mutation.isPending;
+  const canGenerate = !mutation.isPending;
 
   const copy = async (i: number, text: string) => {
     try {
@@ -282,7 +282,7 @@ function CreatePage() {
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <h2 className="font-display text-4xl tracking-wide md:text-5xl">
-              <span className="gradient-text italic">Prompt library.</span>
+              <span className="gradient-text italic">VisualReads Prompt Hub.</span>
             </h2>
             <p className="mt-2 text-muted-foreground">Searchable, copy-to-clipboard. Click "Use" to load it into the editor.</p>
           </div>

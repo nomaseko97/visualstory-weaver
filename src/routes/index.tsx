@@ -13,9 +13,9 @@ import { Toaster } from "@/components/ui/sonner";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "VisualRead — Read in Pictures, Not Paragraphs" },
+      { title: "VisualReads — Read in Pictures, Not Paragraphs" },
       { name: "description", content: "Turn articles, novels, lessons, research — or your own ideas — into comics, storyboards and cinematic scenes." },
-      { property: "og:title", content: "VisualRead — Read in Pictures" },
+      { property: "og:title", content: "VisualReads — Read in Pictures" },
       { property: "og:description", content: "Transform any text or idea into a visual story." },
       { property: "og:image", content: heroImage },
     ],
@@ -53,7 +53,7 @@ function Index() {
             <br /> not paragraphs.
           </h1>
           <p className="mt-6 max-w-lg text-lg text-muted-foreground">
-            VisualRead turns articles, novels, lessons, and research — or your own
+            VisualReads turns articles, novels, lessons, and research — or your own
             short ideas — into comics, storyboards, manga, and cinematic scenes.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -128,7 +128,7 @@ function Index() {
       </section>
 
       <footer className="container mx-auto px-4 pb-10 text-center text-sm text-muted-foreground">
-        © {new Date().getFullYear()} VisualRead — Read in pictures.
+        © {new Date().getFullYear()} VisualReads — Read in pictures.
       </footer>
     </main>
   );

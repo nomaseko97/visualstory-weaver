@@ -15,7 +15,7 @@ export function SiteHeader() {
             <BookOpenText className="h-5 w-5 text-primary-foreground" />
           </div>
           <span className="font-display text-2xl tracking-wider text-foreground">
-            VISUALREAD
+            VISUALREADS
           </span>
         </Link>
 
