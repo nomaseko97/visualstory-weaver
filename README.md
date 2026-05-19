@@ -2,9 +2,9 @@
 
 > Turn long, text-heavy reading into comics, storyboards, infographics, cinematic stills, illustrations and interactive scenes — in seconds.
 
-VisualReads AI is the flagship project inside [Nomaseko Mahlangu's portfolio](https://nomasekomahlangu.lovable.app). It transforms articles, short stories, novels, educational content, magazines, blogs and research summaries into **visually engaging panels** instead of walls of text — and ships with a built-in **prompt library** so anyone can get great results on the first try.
+VisualReads AI is the flagship project that transforms articles, short stories, novels, educational content, magazines, blogs and research summaries into **visually engaging panels** instead of walls of text — and ships with a built-in **prompt library** so anyone can get great results on the first try.
 
-Live demo: <https://nomasekomahlangu.lovable.app/visualreads>
+Live demo: <(https://visualreadss.lovable.app)>
 
 ---
 
