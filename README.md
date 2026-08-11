@@ -46,7 +46,7 @@ A categorised, searchable library of starter prompts that one-click load into th
 - **Animation:** Framer Motion
 - **UI primitives:** shadcn/ui + Radix
 - **Validation:** Zod
-- **AI Gateway:** [Lovable AI Gateway](https://docs.lovable.dev) (OpenAI-compatible)
+- **AI Gateway:** [Lovable AI Gateway]( https://docs.lovable.dev ) (OpenAI-compatible)
   - Planner: `google/gemini-2.5-flash`
   - Image generator: `google/gemini-2.5-flash-image` (Nano Banana)
 
